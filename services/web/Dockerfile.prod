@@ -14,13 +14,9 @@ ENV PYTHONUNBUFFERED=1
 
 # install system dependencies
 RUN sed -i 's/http:\/\/deb.debian.org\/debian/http:\/\/archive.debian.org\/debian/' /etc/apt/sources.list
-#RUN sed -i 's/http:\/\/deb.debian.org\/debian http:\/\/deb.debian.org\/debian\/ buster main/http:\/\/archive.debian.org\/debian\/ buster main/' /etc/apt/sources.list
-#RUN sed -i 's/http:\/\/deb.debian.org\/debian-security http:\/\/deb.debian.org\/debian-security\/ buster/updates main/http:\/\/archive.debian.org\/debian-security\/ buster/updates main/' /etc/apt/sources.list
-#RUN sed -i 's/http:\/\/deb.debian.org\/debian http:\/\/deb.debian.org\/debian\/ buster-updates main/http:\/\/archive.debian.org\/debian\/ buster-updates main/' /etc/apt/sources.list
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends gcc
-#RUN sed -i 's/http:\/\/deb.debian.org\/debian/http:\/\/archive.debian.org\/debian/' /etc/apt/sources.list
 
 # lint
 RUN pip install --upgrade pip
@@ -54,7 +50,6 @@ WORKDIR $APP_HOME
 
 # install dependencies
 RUN sed -i 's/http:\/\/deb.debian.org\/debian/http:\/\/archive.debian.org\/debian/' /etc/apt/sources.list
-#RUN apt-get update && apt-get install -y --no-install-recommends netcat
 RUN apt-get update -y
 RUN apt-get install -y netcat
 COPY --from=builder /usr/src/app/wheels /wheels

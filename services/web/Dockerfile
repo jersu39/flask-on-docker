@@ -11,11 +11,6 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
 # install system dependencies
-#RUN apt-get update && apt-get install -y netcat
-#RUN apk add --no-cache netcat
-#RUN apt-get update --allow-insecure-repositories --yes && apt-get install -y --no-install-recommends netcat
-#RUN apt-get update --yes --allow-releaseinfo-change && apt-get install -y --no-install-recommends netcat
-#RUN apt-get update -y && apt-get install -y --no-install-recommends netcat
 RUN sed -i 's/http:\/\/deb.debian.org\/debian/http:\/\/archive.debian.org\/debian/' /etc/apt/sources.list
 RUN apt-get update -y --no-install-recommends && apt-get install -y netcat
 
@@ -29,16 +24,3 @@ COPY . /usr/src/app/
 
 # run entrypoint.sh
 ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
-
-
-
-
-# llm <<EOF
-# $(files-to-prompt .)
-# question
-# EOF
-
-# files-to-prompt . | xsel
-# ^ clipboard when -X when log in, links to xserver on laptop
-# to xserver on lambda
-
