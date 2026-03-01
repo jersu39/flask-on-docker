@@ -14,7 +14,7 @@ Before running commands, check the port and server numbers. The files in this re
 
 To use the files in this github repo, first clone it with
 ```
-$ git clone https://github.com/jersu39/flask-on-docker
+$ git clone https://github.com/jersu39/flask-on-docker.git
 ```
 then navigate to the folder `flask-on-docker` that it creates.
 
