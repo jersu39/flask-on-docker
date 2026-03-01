@@ -1,4 +1,4 @@
-# Flask on Docker [![](https://github.com/jersu39/flask-on-docker/actions/workflows/tests.yml/badge.svg)](https://github.com/jersu39/flask-on-docker/actions?query=workflow%3Atests)
+# Flask on Docker [![](https://github.com/jersu39/flask-on-docker/actions/workflows/docker-image.yml/badge.svg)](https://github.com/jersu39/flask-on-docker/actions?query=workflow%3Atests)
 
 ## Overview
 
